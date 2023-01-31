@@ -32,7 +32,7 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    'style.loader',
+                    'sass-loader',
                 ]
             },
             {
@@ -41,7 +41,10 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/preset-react'
+                        ]
                     }
                 }
             },
@@ -52,7 +55,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
     },
     plugins: [
         new HtmlWebpackPlugin({
